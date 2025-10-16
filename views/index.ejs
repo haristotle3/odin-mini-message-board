@@ -4,12 +4,13 @@
 <div>
   <h1><%= title %></h1>
   <ul class="outer-list">
-    <% messages.map((message) => { %>
+    <% messages.map((message, index) => { %>
     <li>
       <ul class="inner-list">
         <li>Name: <%=message.user %></li>
         <li>Text: <%=message.text %></li>
         <li>Date: <%=message.added %></li>
+        <button><a href="messages/<%=index %>">Open Message</a></button>
       </ul>
     </li>
     <% })%>
