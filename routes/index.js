@@ -29,4 +29,5 @@ indexRouter.get("/", (req, res) => {
   res.render("index", { title: "Odin Mini Message Board", messages: messages });
 });
 
+export { messages };
 export default indexRouter;
