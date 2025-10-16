@@ -1,0 +1,21 @@
+<head>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<h1>Message details</h1>
+<div class="message-details">
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Text</th>
+      <th>Date</th>
+    </tr>
+    <tr>
+      <td><%=messageObject.user %></td>
+      <td><%=messageObject.text %></td>
+      <td><%=messageObject.added %></td>
+    </tr>
+  </table>
+</div>
+<footer>
+  <a href="/">Go to messages</a>
+</footer>
