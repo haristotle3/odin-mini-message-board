@@ -21,6 +21,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/", indexRouter);
 app.use("/new", newMessageRouter);
 
+app.all(/.*/, (req, res) => {
+  res.send("This page doesn't exist");
+});
+
 app.listen(PORT, hostname, () => {
   console.log(`Server running on ${hostname}:${PORT}`);
 });
