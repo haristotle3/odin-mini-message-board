@@ -1,11 +1,8 @@
 import { Router } from "express";
-import messages from "../models/messages.js";
+import messageDetailsController from "../controllers/messageDetailsController.js";
 
 const messageRouter = Router();
 
-messageRouter.get("/:messageId", (req, res) => {
-  const messageObject = messages[Number(req.params.messageId)];
-  res.render("message", { messageObject: messageObject });
-});
+messageRouter.get("/:messageId", messageDetailsController);
 
 export default messageRouter;

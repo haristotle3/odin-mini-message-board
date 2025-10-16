@@ -1,10 +1,8 @@
 import { Router } from "express";
-import messages from "../models/messages.js";
+import indexController from "../controllers/indexController.js";
 
 const indexRouter = Router();
 
-indexRouter.get("/", (req, res) => {
-  res.render("index", { title: "Odin Mini Message Board", messages: messages });
-});
+indexRouter.get("/", indexController);
 
 export default indexRouter;
