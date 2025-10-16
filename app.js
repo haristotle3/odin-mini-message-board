@@ -7,8 +7,7 @@ import newMessageRouter from "./routes/newMessagesRoute.js";
 import messageRouter from "./routes/messageRoute.js";
 
 const app = express();
-const PORT = process.env.PORT;
-const hostname = process.env.hostname;
+const PORT = process.env.PORT || 3000;
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -27,6 +26,6 @@ app.all(/.*/, (req, res) => {
   res.send("This page doesn't exist");
 });
 
-app.listen(PORT, hostname, () => {
+app.listen(PORT, () => {
   console.log(`Server running on ${hostname}:${PORT}`);
 });
