@@ -55,3 +55,21 @@ textarea {
 input[type="submit"] {
   margin: 12px;
 }
+
+.message-details {
+  margin: 24px;
+}
+
+.message-details table,
+th,
+td,
+tr {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+.message-details table {
+  font-size: 36px;
+  width: 720px;
+  margin: 0 auto;
+}
