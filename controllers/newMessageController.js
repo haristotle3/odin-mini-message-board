@@ -1,8 +1,9 @@
-import messages from "../models/messages.js";
+import db from "../models/db.js";
 
-export function newMessageControllerPOST(req, res) {
-  const newMessageObject = { ...req.body, added: new Date() };
-  messages.push(newMessageObject);
+export async function newMessageControllerPOST(req, res) {
+  const { text, username } = req.body;
+  console.log({ text, username });
+  await db.insertMessage(text, username);
   res.redirect("/");
 }
 

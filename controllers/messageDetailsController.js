@@ -1,6 +1,6 @@
-import messages from "../models/messages.js";
+import db from "../models/db.js";
 
-export default function messageDetailsController(req, res) {
-  const messageObject = messages[Number(req.params.messageId)];
+export default async function messageDetailsController(req, res) {
+  const [messageObject] = await db.getMessageByID(req.params.messageId);
   res.render("message", { messageObject: messageObject });
 }
